@@ -15,14 +15,15 @@ import { PlusCircle, TrendingUp, TrendingDown, Users, X, Trash2, Edit3, LogOut, 
 // Make sure this configuration is correct for your Firebase project.
 // In a real PWA, consider using environment variables for sensitive keys.
 const firebaseConfig = {
-  apiKey: "AIzaSyCOwAswbK4PGB2PRpwHpTp8tKyQ1qur1GY",
-  authDomain: "sheets-b1ca2.firebaseapp.com",
-  projectId: "sheets-b1ca2",
-  storageBucket: "sheets-b1ca2.appspot.com",
-  messagingSenderId: "880298311752",
-  appId: "1:880298311752:web:549f6cdd3e248e5563187d",
-  measurementId: "G-RSRWK1MB2B"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
 const appId = 'money-tracker-data'; // This acts as a unique identifier for your app's data within Firestore.
 
 // --- Helper Functions ---
@@ -879,7 +880,7 @@ function AccountCard({ account, transactions, onAddTransaction, onEditTransactio
       {showTransactions && (
         <div className="bg-slate-850 p-4 max-h-60 overflow-y-auto border-t border-slate-700">
           {visibleTransactions.length === 0 ? (
-            <p className="text-slate-500 text-sm text-center py-2">{searchTerm ? 'No transactions match your search.' :'No transactions.'}</p>
+            <p className="text-slate-500 text-sm text-center py-2">{searchTerm ? 'No transactions match your search.' : 'No transactions.'}</p>
           ) : (
             <ul className="space-y-2">
               {visibleTransactions.map(tx => (
