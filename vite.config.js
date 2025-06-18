@@ -13,7 +13,7 @@ export default defineConfig({
         skipWaiting: true
       },
       manifest: {
-        name: 'Money Tracker PWA',
+        name: 'Money Tracker',
         short_name: 'MoneyTracker',
         description: 'Your personal money tracker',
         theme_color: '#0F172A',
@@ -21,14 +21,14 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: 'logo192.png',
-            sizes: '192x192',
-            type: 'image/png'
+            "src": "favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/svg+xml"
           },
           {
-            src: 'logo512.png',
-            sizes: '512x512',
-            type: 'image/png'
+            "src": "logo.svg",
+            "type": "image/svg+xml",
+            "sizes": "192x192"
           }
         ]
       }
